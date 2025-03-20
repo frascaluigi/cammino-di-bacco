@@ -55,10 +55,17 @@
         text-decoration: none;
         transition: color 0.3s, border-bottom 0.3s;
         border-bottom: 2px solid transparent;
+        cursor: pointer; /* Indica che è cliccabile */
       }
 
       /* Stile hover colore del vino (#6b1d1d) */
       nav.top-right-menu a:hover {
+        color: #6b1d1d !important;
+        border-bottom: 2px solid #6b1d1d !important;
+      }
+
+      /* Link attivo evidenziato permanentemente */
+      nav.top-right-menu a.active {
         color: #6b1d1d !important;
         border-bottom: 2px solid #6b1d1d !important;
       }
@@ -70,6 +77,15 @@
         box-sizing: border-box;
       }
 
+      /* Sezioni interne al container, una per ogni voce di menu */
+      .section {
+        display: none; /* di default sono nascoste */
+      }
+      /* Home visibile di default */
+      #home {
+        display: block;
+      }
+
       h1 {
         font-family: "Playfair Display", serif;
         text-align: center;
@@ -78,6 +94,7 @@
         margin: 40px 0;
       }
 
+      /* Esempio di contenuto con la parte \"content\" e \"side-image\" */
       .content {
         display: flex;
         flex-direction: column;
@@ -96,6 +113,7 @@
         margin-top: 20px;
       }
 
+      /* Carousel e immagini */
       .carousel {
         margin-top: 40px;
         overflow: hidden;
@@ -136,33 +154,7 @@
         }
       }
 
-      .long-content-section {
-        display: flex;
-        gap: 20px;
-        margin-top: 40px;
-        align-items: center;
-      }
-
-      .long-content-section .long-text-image {
-        flex: 1;
-        order: -1;
-      }
-
-      .long-content-section .long-text-image img {
-        width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      }
-
-      .long-text {
-        flex: 3;
-        text-align: center;
-        line-height: 1.8;
-        max-height: 800px;
-        overflow-y: auto;
-        padding-left: 15px;
-      }
-
+      /* Sezione sotto il carosello */
       .below-carousel {
         display: flex;
         gap: 20px;
@@ -184,15 +176,11 @@
         overflow-y: auto;
       }
 
+      /* Responsive */
       @media (max-width: 768px) {
         .content,
-        .long-content-section,
         .below-carousel {
           flex-direction: column;
-        }
-
-        .long-text {
-          padding-left: 0;
         }
       }
     </style>
@@ -200,59 +188,110 @@
   <body>
     <header>
       <nav class="top-right-menu">
-        <a href="#">Home</a>
-        <a href="#">Le Cantine</a>
-        <a href="#">Contattaci</a>
+        <!-- Ogni voce chiama showSection() e diventa attiva -->
+        <a onclick="showSection('home', this)" class="active">Home</a>
+        <a onclick="showSection('cantine', this)">Le Cantine</a>
+        <a onclick="showSection('contattaci', this)">Contattaci</a>
       </nav>
-      <img src="./public/images/main.jpeg" alt="Header Image" />
+      <img src="public/images/main.jpeg" alt="Header Image" />
     </header>
 
     <div class="container">
-      <h1>Un Viaggio Tra i Sapori del Vino</h1>
+      <!-- SEZIONE HOME (visibile di default) -->
+      <div id="home" class="section">
+        <h1>Un Viaggio Tra i Sapori del Vino</h1>
 
-      <div class="content">
-        <div class="text">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Pellentesque euismod ligula in dolor egestas, sit amet suscipit nisi
-            bibendum. Vestibulum ante ipsum primis in faucibus orci luctus et
-            ultrices posuere cubilia curae; Suspendisse potenti. Integer aliquam
-            ligula a tortor hendrerit, id cursus purus aliquam. Nulla malesuada
-            purus id est hendrerit, id volutpat odio congue...
-          </p>
+        <div class="content">
+          <div class="text">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Pellentesque euismod ligula in dolor egestas, sit amet suscipit
+              nisi bibendum. Vestibulum ante ipsum primis in faucibus orci
+              luctus et ultrices posuere cubilia curae; Suspendisse potenti.
+              Integer aliquam ligula a tortor hendrerit, id cursus purus
+              aliquam. Nulla malesuada purus id est hendrerit, id volutpat odio
+              congue...
+            </p>
+          </div>
+
+          <div class="side-image">
+            <img src="public/images/calice.jpeg" alt="Calici di vino" />
+          </div>
         </div>
 
-        <div class="side-image">
-          <img src="./public/images/calice.jpeg" alt="Calici di vino" />
+        <div class="carousel">
+          <div class="carousel-inner">
+            <img src="image1.jpg" alt="Immagine 1" />
+            <img src="image2.jpg" alt="Immagine 2" />
+            <img src="image3.jpg" alt="Immagine 3" />
+            <img src="image4.jpg" alt="Immagine 4" />
+          </div>
+        </div>
+
+        <div class="below-carousel">
+          <div class="image-left">
+            <img src="immagine-sinistra.jpg" alt="Immagine a sinistra" />
+          </div>
+          <div class="text-right">
+            <p>
+              <!-- Inserisci qui il testo di 3000 parole -->
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Pellentesque euismod ligula in dolor egestas, sit amet suscipit
+              nisi bibendum. Vestibulum ante ipsum primis in faucibus orci
+              luctus et ultrices posuere cubilia curae; Suspendisse potenti.
+              Integer aliquam ligula a tortor hendrerit, id cursus purus
+              aliquam. Nulla malesuada purus id est hendrerit, id volutpat odio
+              congue... (ripeti fino a 3000 parole)
+            </p>
+          </div>
         </div>
       </div>
+      <!-- FINE SEZIONE HOME -->
 
-      <div class="carousel">
-        <div class="carousel-inner">
-          <img src="image1.jpg" alt="Immagine 1" />
-          <img src="image2.jpg" alt="Immagine 2" />
-          <img src="image3.jpg" alt="Immagine 3" />
-          <img src="image4.jpg" alt="Immagine 4" />
-        </div>
+      <!-- SEZIONE LE CANTINE -->
+      <div id="cantine" class="section">
+        <h1>Le Cantine</h1>
+        <p>
+          Qui puoi inserire informazioni, gallerie fotografiche, e tutto ciò che
+          desideri sulle cantine partecipanti. Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit...
+        </p>
       </div>
+      <!-- FINE SEZIONE LE CANTINE -->
 
-      <div class="below-carousel">
-        <div class="image-left">
-          <img src="immagine-sinistra.jpg" alt="Immagine a sinistra" />
-        </div>
-        <div class="text-right">
-          <p>
-            <!-- Inserisci qui il testo di 3000 parole -->
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Pellentesque euismod ligula in dolor egestas, sit amet suscipit nisi
-            bibendum. Vestibulum ante ipsum primis in faucibus orci luctus et
-            ultrices posuere cubilia curae; Suspendisse potenti. Integer aliquam
-            ligula a tortor hendrerit, id cursus purus aliquam. Nulla malesuada
-            purus id est hendrerit, id volutpat odio congue... (ripeti fino a
-            3000 parole)
-          </p>
-        </div>
+      <!-- SEZIONE CONTATTACI -->
+      <div id="contattaci" class="section">
+        <h1>Contattaci</h1>
+        <p>
+          Qui puoi inserire un form o i tuoi riferimenti email/telefono per
+          facilitare il contatto. Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit...
+        </p>
       </div>
+      <!-- FINE SEZIONE CONTATTACI -->
     </div>
+
+    <script>
+      function showSection(sectionId, link) {
+        // 1) Nasconde tutte le sezioni
+        document.querySelectorAll(".section").forEach((sec) => {
+          sec.style.display = "none";
+        });
+
+        // 2) Mostra la sezione selezionata
+        const target = document.getElementById(sectionId);
+        if (target) {
+          target.style.display = "block";
+        }
+
+        // 3) Rimuove lo stato 'active' da tutti i link
+        document.querySelectorAll(".top-right-menu a").forEach((a) => {
+          a.classList.remove("active");
+        });
+
+        // 4) Imposta il link cliccato come 'active'
+        link.classList.add("active");
+      }
+    </script>
   </body>
 </html>

@@ -10,36 +10,9 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/style.css" />
 
     <style>
-      body {
-        font-family: "Roboto", sans-serif;
-        background: #ffffff;
-        color: #1a1a1a;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-height: 100vh;
-      }
-
-      /* HEADER a tutta larghezza, altezza 400px */
-      header {
-        width: 100%;
-        height: 400px;
-        overflow: hidden;
-        position: relative;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-      }
-
-      header img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-
       /* Menu in alto a destra sopra l'immagine header */
       nav.top-right-menu {
         position: absolute;
@@ -68,13 +41,6 @@
       nav.top-right-menu a.active {
         color: #6b1d1d !important;
         border-bottom: 2px solid #6b1d1d !important;
-      }
-
-      .container {
-        max-width: 900px;
-        width: 100%;
-        padding: 20px;
-        box-sizing: border-box;
       }
 
       /* Sezioni interne al container, una per ogni voce di menu */
@@ -153,36 +119,6 @@
           transform: translateX(0%);
         }
       }
-
-      /* Sezione sotto il carosello */
-      .below-carousel {
-        display: flex;
-        gap: 20px;
-        margin-top: 40px;
-        align-items: flex-start;
-      }
-
-      .below-carousel .image-left img {
-        width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      }
-
-      .below-carousel .text-right {
-        text-align: justify;
-        line-height: 1.8;
-        flex: 2;
-        max-height: 800px;
-        overflow-y: auto;
-      }
-
-      /* Responsive */
-      @media (max-width: 768px) {
-        .content,
-        .below-carousel {
-          flex-direction: column;
-        }
-      }
     </style>
   </head>
   <body>
@@ -193,7 +129,7 @@
         <a onclick="showSection('cantine', this)">Le Cantine</a>
         <a onclick="showSection('contattaci', this)">Contattaci</a>
       </nav>
-      <img src="public/images/main.jpeg" alt="Header Image" />
+      <img src="images/main.jpeg" alt="Header Image" />
     </header>
 
     <div class="container">
@@ -212,51 +148,167 @@
               aliquam. Nulla malesuada purus id est hendrerit, id volutpat odio
               congue...
             </p>
-          </div>
-
-          <div class="side-image">
-            <img src="public/images/calice.jpeg" alt="Calici di vino" />
-          </div>
-        </div>
-
-        <div class="carousel">
-          <div class="carousel-inner">
-            <img src="image1.jpg" alt="Immagine 1" />
-            <img src="image2.jpg" alt="Immagine 2" />
-            <img src="image3.jpg" alt="Immagine 3" />
-            <img src="image4.jpg" alt="Immagine 4" />
-          </div>
-        </div>
-
-        <div class="below-carousel">
-          <div class="image-left">
-            <img src="immagine-sinistra.jpg" alt="Immagine a sinistra" />
-          </div>
-          <div class="text-right">
             <p>
-              <!-- Inserisci qui il testo di 3000 parole -->
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Pellentesque euismod ligula in dolor egestas, sit amet suscipit
               nisi bibendum. Vestibulum ante ipsum primis in faucibus orci
               luctus et ultrices posuere cubilia curae; Suspendisse potenti.
               Integer aliquam ligula a tortor hendrerit, id cursus purus
               aliquam. Nulla malesuada purus id est hendrerit, id volutpat odio
-              congue... (ripeti fino a 3000 parole)
+              congue...
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Pellentesque euismod ligula in dolor egestas, sit amet suscipit
+              nisi bibendum. Vestibulum ante ipsum primis in faucibus orci
+              luctus et ultrices posuere cubilia curae; Suspendisse potenti.
+              Integer aliquam ligula a tortor hendrerit, id cursus purus
+              aliquam. Nulla malesuada purus id est hendrerit, id volutpat odio
+              congue...
+            </p>
+          </div>
+
+          <!-- <div class="side-image">
+            <img src="/images/calice.jpeg" alt="Calici di vino" />
+          </div> -->
+        </div>
+        <hr />
+        <div class="below-carousel">
+          <div class="text-left">
+            <h2>Titolo o contenuto</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Pellentesque euismod ligula in dolor egestas, sit amet suscipit
+              nisi bibendum. Vestibulum ante ipsum primis in faucibus orci
+              luctus et ultrices posuere cubilia curae; Suspendisse potenti.
+              Integer aliquam ligula a tortor hendrerit, id cursus purus
+              aliquam. Nulla malesuada purus id est hendrerit, id volutpat odio
+              congue...
+            </p>
+          </div>
+          <div class="image-right">
+            <img
+              src="images/batteria-simeone.jpeg"
+              alt="Immagine a destra"
+            />
+          </div>
+        </div>
+
+        <div class="below-carousel">
+          <div class="image-left">
+            <img src="images/calice.jpeg" alt="Immagine a sinistra" />
+          </div>
+          <div class="text-right">
+            <h2>Titolo o contenuto</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Pellentesque euismod ligula in dolor egestas, sit amet suscipit
+              nisi bibendum. Vestibulum ante ipsum primis in faucibus orci
+              luctus et ultrices posuere cubilia curae; Suspendisse potenti.
+              Integer aliquam ligula a tortor hendrerit, id cursus purus
+              aliquam. Nulla malesuada purus id est hendrerit, id volutpat odio
+              congue...
             </p>
           </div>
         </div>
+
+        <div class="below-carousel">
+          <div class="text-left">
+            <h2>Titolo o contenuto</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Pellentesque euismod ligula in dolor egestas, sit amet suscipit
+              nisi bibendum. Vestibulum ante ipsum primis in faucibus orci
+              luctus et ultrices posuere cubilia curae; Suspendisse potenti.
+              Integer aliquam ligula a tortor hendrerit, id cursus purus
+              aliquam. Nulla malesuada purus id est hendrerit, id volutpat odio
+              congue...
+            </p>
+          </div>
+          <div class="image-right">
+            <img
+              src="images/batteria-simeone.jpeg"
+              alt="Immagine a destra"
+            />
+          </div>
+        </div>
       </div>
+
       <!-- FINE SEZIONE HOME -->
 
       <!-- SEZIONE LE CANTINE -->
       <div id="cantine" class="section">
-        <h1>Le Cantine</h1>
+        <!-- <h1>Le Cantine</h1>
         <p>
           Qui puoi inserire informazioni, gallerie fotografiche, e tutto ciò che
           desideri sulle cantine partecipanti. Lorem ipsum dolor sit amet,
           consectetur adipiscing elit...
         </p>
+        <div class="content"></div> -->
+        <section class="winery-card">
+          <div class="image-container">
+            <img src="images/cantina-nista.jpg" alt="Cantina" />
+          </div>
+          <div class="content-container">
+            <h2>Cantina Nista</h2>
+            <p>
+              Immersa tra le dolci colline, l'Antica Cantina del Borgo produce
+              vini artigianali da generazioni. Le botti in rovere, le pietre
+              antiche e l'aroma del mosto rendono questo luogo magico. Ogni
+              bottiglia racconta una storia fatta di passione, tradizione e
+              legame con la terra.
+            </p>
+            <p>
+              I vitigni autoctoni crescono su terreni calcarei esposti al sole,
+              accarezzati dalla brezza marina. Visita la cantina per
+              degustazioni e tour guidati in un ’atmosfera calda e accogliente.
+            </p>
+          </div>
+        </section>
+        <section class="winery-card">
+          <div class="image-container">
+            <img src="images/cantina-simeone.jpg" alt="Cantina" />
+          </div>
+          <div class="content-container">
+            <h2>Cantina Simeone</h2>
+            <p>
+              Immersa tra le dolci colline, l'Antica Cantina del Borgo produce
+              vini artigianali da generazioni. Le botti in rovere, le pietre
+              antiche e l'aroma del mosto rendono questo luogo magico. Ogni
+              bottiglia racconta una storia fatta di passione, tradizione e
+              legame con la terra.
+            </p>
+            <p>
+              I vitigni autoctoni crescono su terreni calcarei esposti al sole,
+              accarezzati dalla brezza marina. Visita la cantina per
+              degustazioni e tour guidati in un ’atmosfera calda e accogliente.
+            </p>
+          </div>
+        </section>
+  
+        <section class="winery-card">
+          <div class="image-container">
+            <img src="images/cantina-potena.jpg" alt="Cantina" />
+          </div>
+          <div class="content-container">
+            <h2>Cantina Potena</h2>
+            <p>
+              Immersa tra le dolci colline, l'Antica Cantina del Borgo produce
+              vini artigianali da generazioni. Le botti in rovere, le pietre
+              antiche e l'aroma del mosto rendono questo luogo magico. Ogni
+              bottiglia racconta una storia fatta di passione, tradizione e
+              legame con la terra.
+            </p>
+            <p>
+              I vitigni autoctoni crescono su terreni calcarei esposti al sole,
+              accarezzati dalla brezza marina. Visita la cantina per
+              degustazioni e tour guidati in un ’atmosfera calda e accogliente.
+            </p>
+          </div>
+        </section>
       </div>
+
+    </div>
       <!-- FINE SEZIONE LE CANTINE -->
 
       <!-- SEZIONE CONTATTACI -->
